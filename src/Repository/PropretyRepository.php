@@ -18,6 +18,18 @@ class PropretyRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Proprety::class);
     }
+    /**
+     * Undocumented function
+     *
+     * @return proprety[]
+     */
+    public function findAllVisible():array
+    {
+        return $this->createQueryBuilder('p')
+                    ->andWhere('p.sold = false')
+                    ->getQuery()
+                    ->getResult();
+    }
 
     // /**
     //  * @return Proprety[] Returns an array of Proprety objects

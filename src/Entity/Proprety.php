@@ -74,7 +74,7 @@ class Proprety
     /**
      * @ORM\Column(type="boolean", options={"default": false})
      */
-    private $sold;
+    private $sold =false;
 
     /**
      * @ORM\Column(type="datetime")
